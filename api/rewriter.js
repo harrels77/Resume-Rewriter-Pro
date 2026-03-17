@@ -1,28 +1,24 @@
-import fetch from "node-fetch";
 
+// Exemple Next.js / Vercel
 export default async function handler(req, res) {
-  if (req.method !== "POST") return res.status(405).send("Method not allowed");
-
   const { bullet, prof, tone, jd } = req.body;
+  const apiKey = process.env.ANTHROPIC_API_KEY;
 
-  if (!bullet) return res.status(400).json({ error: "Bullet is required" });
+  if (!apiKey) return res.status(500).json({ error: "API key missing" });
 
-  try {
-    const response = await fetch("https://api.anthropic.com/v1/complete", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "X-API-Key": process.env.ANTHROPIC_API_KEY, // ta clé côté serveur
-      },
-      body: JSON.stringify({
-        model: "claude-2",
-        prompt: bullet, // tu peux utiliser ton promptTemplate ici
-        max_tokens_to_sample: 500,
-      }),
-    });
-    const data = await response.json();
-    res.status(200).json(data);
-  } catch (err) {
-    res.status(500).json({ error: "Server error" });
-  }
+  const response = await fetch('https://api.anthropic.com/v1/complete', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${apiKey}`,
+    },
+    body: JSON.stringify({
+      model: "claude-2",
+      prompt: `Ton prompt ici avec bullet: ${bullet}, prof: ${prof}, tone: ${tone}, jd: ${jd}`,
+      max_tokens: 300
+    })
+  });
+
+  const data = await response.json();
+  res.status(200).json(data);
 }
