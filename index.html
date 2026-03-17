@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Resume Bullet Rewriter — Free, Instant, 3 Languages</title>
+  <title>Resume Bullet Rewriter Pro — Free, Instant, 3 Languages</title>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
   <style>
     :root {
@@ -573,10 +573,12 @@
     }
   </style>
 </head>
+<script src="script.js"></script>
 <body>
 
   <!-- TOP BAR -->
   <div class="top-bar">
+    <img src="Gemini_Generated_Image_8tu2d48tu2d48tu2" alt="Resume Rewriter Pro" style="height:32px; margin-right:12px;">
     <span class="free-badge" id="txt-free-badge">✦ 100% Free — No sign-up needed</span>
     <div class="lang-row">
       <button class="lang-btn active" onclick="setLang('en')">🇬🇧 EN</button>
@@ -587,7 +589,7 @@
 
   <!-- HERO -->
   <div class="hero">
-    <div class="hero-eyebrow" id="txt-eyebrow">Free Resume Tool</div>
+    <div class="hero-eyebrow" id="txt-eyebrow">Resume Rewriter Pro</div>
     <h1 id="txt-h1">Turn weak resume bullets<br>into lines that get interviews.</h1>
     <p class="hero-sub" id="txt-sub">Paste any bullet point. Get 3 AI-powered rewrites with a strength score and explanation — in seconds.</p>
 
@@ -717,10 +719,10 @@
   </div>
 
   <!-- API CONFIG (owner only) -->
-  <div class="api-cfg">
+  <div class="api-cfg" style="display:none;">
     <strong id="cfg-lbl">Owner setup — paste your Anthropic API key below to test locally</strong>
     <span id="cfg-hint">On Vercel, store it as an environment variable instead.</span>
-    <input type="text" id="api-key" placeholder="sk-ant-..."/>
+    <input type="text" id="api-key" value="YOUR_ANTHROPIC_API_KEY_HERE"/>
   </div>
 
   <script>
