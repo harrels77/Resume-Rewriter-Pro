@@ -44,44 +44,64 @@
     /* =====================================================
        TOP BAR — langue + badge gratuit
     ===================================================== */
-    .top-bar {
-      background: var(--accent-dark);
-      color: #fff;
-      padding: 10px 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
+	 .top-bar {
+	  background: #ffffff;
+	  border-bottom: 1.5px solid #E2EDF7;
+	  padding: 0 32px;
+	  height: 64px;
+	  display: flex;
+	  align-items: center;
+	  justify-content: space-between;
+	  gap: 16px;
+	  position: sticky;
+	  top: 0;
+	  z-index: 100;
+	  box-shadow: 0 2px 16px rgba(13,61,107,.07);
+	}
+	  
+	.top-bar .free-badge {
+	  font-size: 12px;
+	  font-weight: 600;
+	  background: #EAF6FF;
+	  color: #1A5C9A;
+	  padding: 5px 16px;
+	  border-radius: 100px;
+	  border: 1px solid #BDD9EF;
+	  letter-spacing: .02em;
+	}
 
-    .free-badge {
-      font-size: 12px;
-      font-weight: 600;
-      background: #fff;
-      color: var(--accent-dark);
-      padding: 4px 14px;
-      border-radius: 100px;
-      letter-spacing: .03em;
-    }
+	.logo-img {
+	  height: 44px;
+	  width: auto;
+	  display: block;
+	}
 
     .lang-row { display: flex; gap: 6px; }
 
-    .lang-btn {
-      font-family: var(--font-b);
-      font-size: 12px;
-      font-weight: 600;
-      padding: 5px 14px;
-      border-radius: 100px;
-      border: 1.5px solid rgba(255,255,255,.35);
-      background: transparent;
-      color: rgba(255,255,255,.75);
-      cursor: pointer;
-      transition: all .2s;
-    }
+	.lang-btn {
+	  font-family: var(--font-b);
+	  font-size: 12px;
+	  font-weight: 600;
+	  padding: 5px 14px;
+	  border-radius: 100px;
+	  border: 1.5px solid #BDD9EF;
+	  background: transparent;
+	  color: #4A6580;
+	  cursor: pointer;
+	  transition: all .2s;
+	}
 
-    .lang-btn:hover { border-color: #fff; color: #fff; }
-    .lang-btn.active { background: #fff; color: var(--accent-dark); border-color: #fff; }
+    .lang-btn:hover {
+	  border-color: var(--accent);
+	  color: var(--accent);
+	  background: #EAF6FF;
+	}
+	  
+	  .lang-btn.active {
+	  background: var(--accent);
+	  border-color: var(--accent);
+	  color: #fff;
+	}
 
     /* =====================================================
        HERO
@@ -184,19 +204,21 @@
     /* =====================================================
        MAIN CARD
     ===================================================== */
-    .card {
-      max-width: 740px;
-      margin: -10px auto 0;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 36px 40px;
-      position: relative;
-      z-index: 1;
-      box-shadow: 0 4px 32px rgba(26,127,204,.10);
-    }
+	.card {
+	  max-width: 740px;
+	  margin: -24px auto 0;
+	  background: var(--surface);
+	  border: 1px solid var(--border);
+	  border-radius: 24px;
+	  padding: 48px 52px;
+	  position: relative;
+	  z-index: 1;
+	  box-shadow: 0 8px 48px rgba(13,61,107,.12);
+	}
 
-    @media(max-width:580px){ .card{ padding:22px 16px; margin: -10px 12px 0; } }
+	@media(max-width:580px){
+	  .card { padding: 28px 20px; margin: -16px 12px 0; }
+	}
 
     .field { margin-bottom: 20px; }
 
@@ -578,12 +600,14 @@
 
   <!-- TOP BAR -->
   <div class="top-bar">
-    <img src="Gemini_Generated_Image_8tu2d48tu2d48tu2.png" alt="Resume Rewriter Pro" style="height:32px; margin-right:12px;">
-    <span class="free-badge" id="txt-free-badge">✦ 100% Free — No sign-up needed</span>
-    <div class="lang-row">
-      <button class="lang-btn active" onclick="setLang('en')">🇬🇧 EN</button>
-      <button class="lang-btn" onclick="setLang('es')">🇪🇸 ES</button>
-      <button class="lang-btn" onclick="setLang('fr')">🇫🇷 FR</button>
+	<img src="Gemini_Generated_Image_8tu2d48tu2d48tu2.png"
+       	 alt="Resume Rewriter Pro"
+         class="logo-img"/>
+  	<span class="free-badge" id="txt-free-badge">✦ 100% Free — No sign-up needed</span>
+  	<div class="lang-row">
+     <button class="lang-btn active" onclick="setLang('en')">🇬🇧 EN</button>
+     <button class="lang-btn" onclick="setLang('es')">🇪🇸 ES</button>
+     <button class="lang-btn" onclick="setLang('fr')">🇫🇷 FR</button>
     </div>
   </div>
 
