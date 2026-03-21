@@ -58,7 +58,7 @@
 	  display: flex;
 	  align-items: center;
 	  justify-content: space-between;
-	  gap: 16px;
+	  gap: 8px;
 	  position: sticky;
 	  top: 0;
 	  z-index: 100;
@@ -66,14 +66,14 @@
 	}
 	  
 	.top-bar .free-badge {
-	  font-size: 12px;
-	  font-weight: 600;
-	  background: #EAF6FF;
-	  color: #1A5C9A;
-	  padding: 5px 16px;
-	  border-radius: 100px;
-	  border: 1px solid #BDD9EF;
-	  letter-spacing: .02em;
+     font-size: 12px;
+	 font-weight: 600;
+	 background: #EAF6FF;
+	 color: #1A5C9A;
+	 padding: 5px 16px;
+	 border-radius: 100px;
+     border: 1px solid #BDD9EF;
+	 letter-spacing: .02em;
 	}
 
 	.logo-img {
@@ -223,6 +223,7 @@
 	}
 
 	@media(max-width:580px){
+	  .free-badge { display: none; }
 	  .card { padding: 28px 20px; margin: -16px 12px 0; }
 	}
 
