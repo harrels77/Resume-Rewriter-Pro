@@ -12,5 +12,11 @@
       ]
     }
   ],
+  "routes": [
+    {
+      "src": "/sitemap.xml",
+      "dest": "/sitemap-static.xml"
+    }
+  ],
   "cleanUrls": false
 }
